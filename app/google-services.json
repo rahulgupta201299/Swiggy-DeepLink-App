@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "596727070292",
+    "firebase_url": "https://swiggy-deeplink-app.firebaseio.com",
+    "project_id": "swiggy-deeplink-app",
+    "storage_bucket": "swiggy-deeplink-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596727070292:android:33f82efed49a70a4c577c1",
+        "android_client_info": {
+          "package_name": "com.example.swiggydeeplinkapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596727070292-al4ivrh83cfnl59vashk34c4ltd6e5e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnelfE-XzwIOpbo-_7nZS-NfNhTqC_40s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596727070292-al4ivrh83cfnl59vashk34c4ltd6e5e5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "596727070292-vi2ttpb4jb1dh4abbv2jhn5h56g5p5uf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Swiggy.DeeplinkLookupApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/UniversaltextViewlink"
+        android:layout_width="303dp"
+        android:layout_height="wrap_content"
+        android:linksClickable="true"
+        android:padding="6dp"
+        android:lineSpacingExtra="1mm"
+        android:textStyle="bold"
+        android:textColor="@color/lightblue"
+        android:text="Link"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <TextView
+        android:id="@+id/UniversaltextViewtitle"
+        android:layout_width="303dp"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:text="title"
+        app:layout_constraintTop_toBottomOf="@+id/UniversaltextViewlink"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <Button
+        android:id="@+id/UniversalbuttonLaunch"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/UniversaltextViewlink"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/UniversaltextViewtitle"
+        app:layout_constraintTop_toTopOf="@+id/UniversaltextViewlink"
+        android:background="@drawable/ic_baseline_launch_24"
+        tools:layout_editor_absoluteX="304dp"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/UniversalbuttonArrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/UniversaltextViewtitle"
+        app:layout_constraintTop_toTopOf="@+id/UniversaltextViewlink"
+        app:layout_constraintLeft_toRightOf="@+id/UniversalbuttonLaunch"
+        android:background="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
