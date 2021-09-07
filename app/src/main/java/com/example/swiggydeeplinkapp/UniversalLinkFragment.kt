@@ -1,5 +1,6 @@
 package com.example.swiggydeeplinkapp
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -59,6 +60,7 @@ class UniversalLinkFragment:Fragment() {
 
         return view
     }
+
 
     private fun initRecyclerView(header: ArrayList<String>,deeplink:HashMap<Int,ArrayList<DeepLinks>>){
         recyclerView.layoutManager = LinearLayoutManager(activity)

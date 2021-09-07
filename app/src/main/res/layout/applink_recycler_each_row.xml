@@ -7,27 +7,31 @@
 
     <TextView
         android:id="@+id/ApptextViewlink"
-        android:layout_width="303dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="6dp"
         android:lineSpacingExtra="1mm"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/AppbuttonLaunch"
         android:textColor="@color/lightblue"
         android:text="Link"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ApptextViewtitle"
-        android:layout_width="303dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:padding="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/AppbuttonLaunch"
+        android:layout_marginRight="40dp"
         android:text="title"
         app:layout_constraintTop_toBottomOf="@+id/ApptextViewlink"
         android:textColor="@color/black"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="48dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/AppbuttonLaunch"
@@ -35,6 +39,7 @@
         android:layout_height="20dp"
         app:layout_constraintLeft_toRightOf="@+id/ApptextViewlink"
         android:layout_marginLeft="40dp"
+        app:layout_constraintRight_toLeftOf="@+id/AppbuttonArrow"
         app:layout_constraintBottom_toBottomOf="@+id/ApptextViewtitle"
         app:layout_constraintTop_toTopOf="@+id/ApptextViewlink"
         android:background="@drawable/ic_baseline_launch_24"
@@ -44,6 +49,8 @@
         android:id="@+id/AppbuttonArrow"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="20dp"
         android:layout_marginLeft="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/ApptextViewtitle"
         app:layout_constraintTop_toTopOf="@+id/ApptextViewlink"

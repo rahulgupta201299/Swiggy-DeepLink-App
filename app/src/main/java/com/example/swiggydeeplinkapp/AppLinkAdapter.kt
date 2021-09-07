@@ -70,6 +70,18 @@ class InnerAdapter(private var deeplink:ArrayList<DeepLinks>,private var header:
                 context.startActivity(intent)
             }
         }
+        holder.launch.setOnClickListener{
+            val intent = Intent(context,EditActivity::class.java)
+            intent.putExtra("link","${holder.link.text}")
+            intent.putExtra("title","${holder.subtitle.text}")
+            context.startActivity(intent)
+        }
+        holder.arrow.setOnClickListener{
+            val intent = Intent(context,EditActivity::class.java)
+            intent.putExtra("link","${holder.link.text}")
+            intent.putExtra("title","${holder.subtitle.text}")
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = deeplink.size

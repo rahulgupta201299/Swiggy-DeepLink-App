@@ -6,7 +6,6 @@ import android.net.Uri
 import android.text.SpannableString
 import android.text.method.LinkMovementMethod
 import android.text.style.UnderlineSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,6 +50,7 @@ class UniversalLinkAdapter(private var universalLinkCategoryList:ArrayList<Strin
 
 class UniversalInnerAdapter(private var deeplink:ArrayList<DeepLinks>,private var header:String):RecyclerView.Adapter<UniversalInnerAdapter.ViewHolder>(){
     private lateinit var context:Context
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.universallink_recycler_each_row,parent,false))
@@ -71,7 +71,16 @@ class UniversalInnerAdapter(private var deeplink:ArrayList<DeepLinks>,private va
             }
         }
         holder.launch.setOnClickListener{
-
+            val intent = Intent(context,EditActivity::class.java)
+            intent.putExtra("link","${holder.link.text}")
+            intent.putExtra("title","${holder.subtitle.text}")
+            context.startActivity(intent)
+        }
+        holder.arrow.setOnClickListener{
+            val intent = Intent(context,EditActivity::class.java)
+            intent.putExtra("link","${holder.link.text}")
+            intent.putExtra("title","${holder.subtitle.text}")
+            context.startActivity(intent)
         }
     }
 
@@ -85,5 +94,6 @@ class UniversalInnerAdapter(private var deeplink:ArrayList<DeepLinks>,private va
     }
 
 }
+
 
 
