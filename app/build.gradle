@@ -8,6 +8,7 @@ plugins {
     //id "dagger.hilt.android.plugin"
 }
 
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
@@ -98,6 +99,7 @@ dependencies {
     // Declare the dependency for the Cloud Storage library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-firestore-ktx'
-    implementation 'com.google.firebase:firebase-storage-ktx'
+    //implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-database:20.0.1'
 
 }

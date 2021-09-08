@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swiggydeeplinkapp.Model.DeepLinks
+import com.example.swiggydeeplinkapp.Model.FirebaseObject
 import com.google.firebase.database.*
 
 class AppLinkFragment:Fragment() {
@@ -22,7 +23,7 @@ class AppLinkFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_app_link,container,false)
-        database = FirebaseDatabase.getInstance()
+        database = FirebaseObject.database
         reference = database.getReference("AppLinkJSON").child("data")
         reference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
