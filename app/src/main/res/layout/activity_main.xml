@@ -7,29 +7,24 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_heading"
-        android:background="@color/lightgray"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
+    <include
+        android:id="@+id/toolbarMainActivity"
+        layout="@layout/toolbar_main_activity"/>
 
     <FrameLayout
         android:id="@+id/fragment_contaier"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
-        android:layout_above="@+id/bottom_navigation" />
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_below="@+id/toolbarMainActivity"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        app:itemIconSize="10dp"
         app:menu="@menu/bottom_navigation_view"
         android:background="@color/gray"/>
 

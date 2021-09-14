@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/AppLinks"
-        android:icon="@drawable/ic_launcher_circular1"
-        android:title="App Links" />
-    <item
-        android:id="@+id/UniversalLinks"
-        android:icon="@drawable/ic_launcher_circular2"
-        android:title="Universal Links" />
+
 </menu>

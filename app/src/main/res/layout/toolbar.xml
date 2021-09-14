@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/lightgray"
+    app:titleTextColor="@color/black"
+    android:elevation="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/ToolBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/app_heading"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/OpenLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open"
+        android:textSize="20dp"
+        android:paddingTop="4dp"
+        android:gravity="center_vertical"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/lightblue"/>
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>
