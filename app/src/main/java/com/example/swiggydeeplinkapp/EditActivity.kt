@@ -70,7 +70,6 @@ class EditActivity:AppCompatActivity(){
 
         val mOrientationEventListenerc = object : OrientationEventListener(this){
             override fun onOrientationChanged(orientation: Int) {
-                Log.d("rahul","$orientation")
                 doneButton.isVisible = (orientation!=90 && orientation!=270)
             }
 

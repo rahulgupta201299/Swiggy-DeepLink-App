@@ -5,14 +5,13 @@ import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swiggydeeplinkapp.Model.DeepLinks
 import com.example.swiggydeeplinkapp.Model.FirebaseObject
 import com.google.firebase.database.*
 
-class AppLinkFragment(private val BottomNavName:String):Fragment() {
+class LinkFragment(private val BottomNavName:String):Fragment() {
     private lateinit var recyclerView:RecyclerView
     private lateinit var database:FirebaseDatabase
     private lateinit var reference:DatabaseReference
@@ -29,8 +28,6 @@ class AppLinkFragment(private val BottomNavName:String):Fragment() {
         setHasOptionsMenu(true)
         retainInstance = true
         recyclerView = view.findViewById(R.id.recyclerView_app_link)
-        //val dividerItemDecoration = DividerItemDecoration(context,0)
-        //recyclerView.addItemDecoration(dividerItemDecoration)
         database = FirebaseObject.database
         reference = database.getReference("parentData").child(BottomNavName).child("data")
         reference.addValueEventListener(object : ValueEventListener {
@@ -67,7 +64,7 @@ class AppLinkFragment(private val BottomNavName:String):Fragment() {
 
     private fun initRecyclerView(header: ArrayList<String>,deeplink:HashMap<Int,ArrayList<DeepLinks>>){
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        val adapter = AppLinkAdapter(header,deeplink)
+        val adapter = LinkAdapter(header,deeplink)
         recyclerView.adapter = adapter
     }
 

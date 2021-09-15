@@ -4,13 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.View
-import android.widget.FrameLayout
-import android.widget.SearchView
-import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.example.swiggydeeplinkapp.Model.DeepLinks
 import com.example.swiggydeeplinkapp.Model.FirebaseObject
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
@@ -43,18 +38,15 @@ class MainActivity : AppCompatActivity(){
                     menu.add(Menu.NONE,cnt,Menu.NONE,"${i.key}")
                     when(cnt){
                         0->{
-                            Log.d("rahul","0")
                             menu.getItem(0).setIcon(R.drawable.ic_launcher_circular1)
                         }
                         1->{
-                            Log.d("rahul","1")
                             menu.getItem(1).setIcon(R.drawable.ic_launcher_circular2)
                         }
                         2->{
                             menu.getItem(2).setIcon(R.drawable.ic_launcher_circular3)
                         }
                         3->{
-                            Log.d("rahul","4")
                             menu.getItem(3).setIcon(R.drawable.ic_launcher_circular4)
                         }
                         4->{
@@ -73,7 +65,7 @@ class MainActivity : AppCompatActivity(){
 
 
         bottomNav.setOnItemSelectedListener {
-            setCurrentFragment(AppLinkFragment(ListOfBottomNav.get(it.itemId)))
+            setCurrentFragment(LinkFragment(ListOfBottomNav.get(it.itemId)))
             true
         }
     }
@@ -85,6 +77,6 @@ class MainActivity : AppCompatActivity(){
         }
     }
     private fun initBottomNavView(arr:ArrayList<String>){
-        setCurrentFragment(AppLinkFragment(arr.get(0)))
+        setCurrentFragment(LinkFragment(arr.get(0)))
     }
 }

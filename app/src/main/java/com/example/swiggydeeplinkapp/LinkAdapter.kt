@@ -22,7 +22,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class AppLinkAdapter(private var appLinkCategoryList:ArrayList<String>,private var appLinkDeepLinkList:HashMap<Int,ArrayList<DeepLinks>>):RecyclerView.Adapter<AppLinkAdapter.ViewHolder>() {
+class LinkAdapter(private var appLinkCategoryList:ArrayList<String>,private var appLinkDeepLinkList:HashMap<Int,ArrayList<DeepLinks>>):RecyclerView.Adapter<LinkAdapter.ViewHolder>() {
 
     private lateinit var context:Context
     var innerAdapter = InnerAdapter(ArrayList())
@@ -80,7 +80,6 @@ class InnerAdapter(private var deeplink:ArrayList<DeepLinks>):RecyclerView.Adapt
             try{
                 val intent = Intent(ACTION_VIEW, Uri.parse(holder.link.text.toString()))
                 intent.addCategory(CATEGORY_BROWSABLE)
-                //intent.flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_REQUIRE_NON_BROWSER
                 context.startActivity(intent)
             }catch (e:ActivityNotFoundException){
                 Log.d("Error","Failed to open links")
