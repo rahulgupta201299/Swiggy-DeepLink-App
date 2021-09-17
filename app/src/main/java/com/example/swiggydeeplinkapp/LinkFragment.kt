@@ -72,6 +72,17 @@ class LinkFragment(private val BottomNavName:String):Fragment() {
         inflater.inflate((R.menu.main_menu),menu)
         item = menu.findItem(R.id.action_search)
         searchView = item.actionView as SearchView
+        item.setOnActionExpandListener(object : MenuItem.OnActionExpandListener{
+            override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
+                return true
+            }
+
+            override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
+                initRecyclerView(header,final)
+                return true
+            }
+
+        })
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
 
@@ -80,7 +91,7 @@ class LinkFragment(private val BottomNavName:String):Fragment() {
                 for(i in final) {
                     var deeplink = ArrayList<DeepLinks>()
                     for(j in i.value){
-                        if(j.title.contains(query!!,ignoreCase = true)){
+                        if(j.title.contains(query!!,ignoreCase = true)||j.link.contains(query!!,ignoreCase = true)){
                             deeplink.add(j)
                         }
                     }
